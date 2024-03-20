@@ -22,7 +22,7 @@ public class DBUtils {
     private final static String DB_NAME = "BOOKING_PARTY";
     private final static String PORT_NUMBER = "21361";
     private final static String USER_ID = "avnadmin";
-    private final static String PASSWORD = "";
+//    private final static String PASSWORD = "AVNS_3PWIbxhW6QDNfaPBc8u";
 
     public static Connection getConnection() throws SQLException, NamingException {
 //        try {
