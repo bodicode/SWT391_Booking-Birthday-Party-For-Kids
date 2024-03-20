@@ -1,0 +1,519 @@
+
+*{
+    box-sizing: inherit;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+ul{
+    list-style-type: none; 
+}
+.content-header{
+}
+
+.content-header h2{
+    font-weight: bold;
+    color: #FF66CC;
+}
+
+.content-info p{
+    padding: 0;
+    line-height: 2;
+    text-indent: 50px;
+}
+
+.content-info a{
+    width: auto;
+    border: #EEE solid 1px;
+    padding: 7px 20px;
+    text-transform: uppercase;
+    color: #231f20;
+    font-size: 14px;
+}
+
+.content-info img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.bg-color{
+    background-color: rgba(238, 238, 238, 0.3);
+}
+
+.menu-header h2{
+    font-weight: bold;
+}
+
+.menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;   
+}
+
+.menu-item {
+    width: calc(25% - 10px);  
+    box-sizing: border-box;
+    margin-bottom: 20px;  
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item:hover .menu-item-details {
+    transform: translateY(0); /* Hiển thị menu-item-details khi hover và trượt lên */
+}
+
+.menu-item-img {
+    width: 100%;
+    height: 320px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.menu-item-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Màu nền của menu-item-details, bạn có thể điều chỉnh mức độ đen của nó tùy chọn */
+    color: #fff; /* Màu chữ của menu-item-details */
+    transform: translateY(52%); /* Ẩn menu-item-details khi không hover */
+    transition: transform 0.3s; /* Áp dụng hiệu ứng chuyển động */
+    padding-bottom: 14px;
+}
+
+.menu-item-name {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.order-button {
+    padding: 10px 20px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.order-button:hover{ 
+    background-color: #000  ;
+    color: #fff;
+    text-decoration: none;
+}
+
+.service-header h2{
+    font-weight: bold;
+    color: #FF66CC;
+}
+
+.introduce-item img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+.introduce-content {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); /* Di chuyển lên và sang trái để căn giữa */
+    z-index: 2; /* Đặt lớp chứa nội dung trên ảnh */
+    text-align: center; /* Căn giữa nội dung *//* Màu chữ trắng để nổi bật trên ảnh */
+}
+
+.introduce-item h2{
+    color: #000;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.introduce-item:hover .introduce-content {
+    opacity: 1; /* Hiển thị nội dung khi hover */
+}
+
+.introduce-link:hover .introduce-content h2 {
+    color: #ff69b4; /* Màu hồng khi hover */
+    transition: color 0.3s ease-in-out; /* Áp dụng hiệu ứng chuyển động màu */
+}
+
+.service-item img{
+    width: 100%;
+    height: 300px;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translateX(-1px);
+    }
+    20%, 80% {
+        transform: translateX(2px);
+    }
+    30%, 50%, 70% {
+        transform: translateX(-4px);
+    }
+    40%, 60% {
+        transform: translateX(4px);
+    }
+}
+
+#modal-add-service,
+#modal-add,
+#modal-signup,
+#modal-login{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.modal-add-service-container,
+.modal-add-container,
+.modal-signup-container,
+.modal-login-container{
+    background-color: #fff;
+    width: 500px;
+    min-height: 200px;
+    position: relative;
+    animation: modalFadeIn ease 0.4s;
+    border-radius: 12px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.modal-add-service-header,
+.modal-add-header,
+.modal-signup-header,
+.modal-login-header{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: bold;
+    background-color: #FFD3E0;
+}
+
+.modal-add-service-close,
+.modal-add-close,
+.modal-signup-close,
+.modal-login-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: red;
+    padding: 12px;
+    font-size: 20px;
+}
+
+.modal-add-service-close:hover,
+.modal-add-close:hover,
+.modal-signup-close:hover,
+.modal-login-close:hover{
+    cursor: pointer;
+}
+
+.modal-add-service-body,
+.modal-add-body,
+.modal-signup-body,
+.modal-login-body{
+    padding: 16px;
+}
+
+.modal-signup-footer,
+.modal-login-footer{
+    padding: 16px;
+    text-align: right;
+}
+
+.modal-login-footer a{
+    color: #2196F3;
+}
+
+.add-service-row,
+.add-row,
+.signup-row,
+.login-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-row{
+    text-align: center;
+}
+
+.login-error{
+    color: red;
+    text-align: center;
+    margin: 0 0 24px 0;
+}
+
+.signup-error-text{
+    color: red;
+    text-align: center;
+    margin: 0 0 8px 0;
+}
+
+.text-box {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 15px;
+    margin-bottom: 8px;
+    margin-bottom: 14px;
+    background-color: #eee;
+    width: 80%;
+}
+
+.text-box:focus {
+    border: 1px solid #000;
+}
+
+.login-row-forgot-password{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.create-account-text,
+.login-row-forgot-password-text{
+    text-decoration: none;
+    color: #696969;
+}
+
+.create-account-text:hover,
+.login-row-forgot-password-text:hover{
+    text-decoration: underline;
+    color: #2196F3;
+}
+
+.add-service-row-button,
+.add-row-button,
+.signup-row-button,
+.login-row-button{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-add-service,
+.btn-add,
+.btn-signup-modal,
+.btn-login-modal{
+    border-radius: 20px;
+    padding: 12px 24px;
+    border: #FFFF99 1px solid;
+    color: #FFFFFF;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    background-color: #FF66CC;
+    color: #000;
+}
+
+.btn-add-service:hover,
+.btn-add:hover,
+.btn-signup-modal:hover,
+.btn-login-modal:hover{
+    background-color: #00FFFF;
+    cursor: pointer;
+}
+
+.btn-add-service:active,
+.btn-add:active,
+.btn-signup-modal:active,
+.btn-login-modal:active {
+    transform: scale(0.95);
+}
+
+.btn-add-service:focus,
+btn-add:focus,
+.btn-signup-modal:focus,
+.btn-login-modal:focus {
+    outline: none;
+}
+
+.add-service-row-button:hover,
+.add-row-button:hover,
+.signup-row-button:hover,
+.login-row-button:hover{
+    cursor: pointer;
+}
+
+.forgot-create{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.alternative-signup-button,
+.alternative-login-button{
+    display: flex;
+    justify-content: center;
+}
+
+.alternative-signup-text,
+.alternative-login-text{
+    text-align: center;
+    margin-top: 16px;
+    font-weight: bold;
+    margin: 0 16px;
+    display: flex;
+    align-items: center;
+}
+
+.signup-google-button,
+.login-google-button{
+    padding: 12px 18px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
+}
+
+.signup-google-button:hover,
+.login-google-button:hover{
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);
+    cursor: pointer;
+}
+
+.signup-google-text,
+.login-google-text {
+    display: flex;
+    align-items: center;
+    transition: background-color .3s, box-shadow .3s;
+    border: none;
+    border-radius: 3px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.signup-google-text a,
+.login-google-text a{
+    text-decoration: none;
+    color: #696969;
+}
+
+.signup-google-icon,  
+.login-google-icon{
+    margin-right: 8px;
+}
+
+.switch-login{
+    display: flex;
+    justify-content: center;
+}
+
+.switch-login-text{
+    text-decoration: none;
+    color: #696969;
+    margin: 20px 0;
+}
+
+.switch-login-text:hover{
+    text-decoration: underline;
+}
+
+.service__heading{
+    text-align: start;
+    font-size: 3rem;
+    color: #000;
+    margin-bottom: 50px;
+    margin-left: 50px
+}
+
+.service__image-list {
+    display: flex;
+    justify-content: center;  
+}
+
+.service__image-item {
+    max-width: 400px;
+    max-height: 500px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service__image-item-img {
+    border-radius: 12px;
+    width: 90%;
+    height: 45%;
+    object-fit: cover;
+    margin: 12px 0;
+}
+
+.service__image-item-name {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.service__image-item-list {
+    padding: 0;
+}
+
+.service__image-item-details {
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: bold;
+    padding-left: 8px;
+    font-style: italic;
+}
+
+.service__image-item-details-pink{
+    color: #FF3399;
+}
+
+.service__image-item-details-blue{
+    color: #33CCFF;
+}
+
+.service__image-item-details-green{
+    color:#00CC00;
+}
+
+.footer{
+    background-color: #FFD3E0;
+    height: auto;
+}
+
+@keyframes modalFadeIn {
+    from{
+        transform: translateY(-300px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes modalBottomTo {
+    from{
+        transform: translateY(300px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+

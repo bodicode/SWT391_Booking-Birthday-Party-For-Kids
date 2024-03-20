@@ -1,0 +1,25 @@
+*{
+    box-sizing: inherit;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+.navigation{
+    padding-top: 123px;
+}
+
+.navigation-list {
+    background-color: #99B3FF;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    height: 120px
+}
+
+.navigation-item {
+    margin-right: 20px;
+}

@@ -1,0 +1,23 @@
+.container-contact{
+    padding-top: 170px;
+}
+
+.mt{
+    margin-top: 50px;
+}
+
+.image img{
+    object-fit: cover;
+}
+
+.bt {
+    border-top: 1px solid #ccc;
+}
+
+.pink{
+    color: #FF33CC;
+}
+
+.blue{
+    color: #2196F3;
+}

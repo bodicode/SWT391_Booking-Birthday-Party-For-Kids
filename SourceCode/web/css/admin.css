@@ -1,0 +1,174 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 21, 2024, 8:49:32 PM
+    Author     : Minh
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/**{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}*/
+
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    opacity: 1;
+    overflow-y: scroll;
+    margin: 0;
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper{
+    align-items: stretch;
+    display: flex;
+    width: 100%;
+}
+
+#sidebar{
+    max-width: 264px;
+    min-width: 264px;
+    background: #FFADC6;
+    transition: all 0.35s ease-in-out;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 0;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    width: 100%;
+    background: #ffebf1;
+}
+
+/*Sidebar Elements*/
+.sidebar-logo {
+    padding: 1.15rem;
+}
+
+.sidebar-logo a {
+    color: #0C0C0C;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.sidebar-nav{
+    flex-grow: 1;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    margin-left: 0;    
+}
+
+a.sidebar-link {
+    padding: 1.5rem 1.5rem .375rem;
+    color: #0C0C0C;
+    position: relative;
+    display: block;
+    font-size: 0.875rem;
+}
+
+a.sidebar-link:hover{
+    background-color: rgba(255, 255, 255, .1);
+    /*color: #fff;*/
+    opacity: 1;
+    border-left: 4px solid #FFD3E0;
+}
+
+.sidebar-link i {
+    margin-right: 0.5rem; 
+}
+
+.custom-btn {
+    margin: 3rem 0 3rem 0;
+    padding: 0.5rem 1rem ;
+    background-color: #FFADC6;
+    color: white;
+    font-weight: 500;
+    border: none; 
+    border-radius: 5px;
+}
+
+.custom-btn:hover {
+    background-color: #ff94b4; 
+    box-shadow:  5px 5px 10px #f5cbd7,
+             -5px -5px 10px #ffdbe9;
+}
+
+.custom-btn2{
+    margin: 3rem 0 3rem 0;
+    padding: 0.5rem 1rem ;
+    background-color: #fffafb;
+    color: #0C0C0C;
+    font-weight: 500;
+    border-color: #FFADC6;
+    border-radius: 5px;
+}
+
+.custom-btn2:hover{
+    background: #fff5f7;
+    box-shadow:  5px 5px 10px #f5cbd7,
+             -5px -5px 10px #ffdbe9;
+}
+
+/* Sidebar Toggle */
+#sidebar.collapsed {
+    margin-left: -264px;
+}
+
+/* Theme Toggler */
+.theme-toggle {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    left: auto;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FFADC6;
+}
+
+html[data-bs-theme="dark"] .theme-toggle .fa-sun,
+html[data-bs-theme="light"] .theme-toggle .fa-moon {
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+    font-size: 1.25rem;
+    color: #FFF;
+}
+
+html[data-bs-theme="dark"] .theme-toggle .fa-moon {
+    display: none;
+}
+
+html[data-bs-theme="light"] .theme-toggle .fa-sun {
+    display: none;
+}
+
+html[data-bs-theme="dark"] .main {
+    background: #1a1a1a; /* Dark background color when in dark mode */
+}

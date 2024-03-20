@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/booking-birthday-party-for-kids">
+    <Resource
+        name = "DSBOOKINGPARTY" type ="javax.sql.DataSource" auth ="Container"
+        driverClassName = "com.mysql.jdbc.Driver"
+        url = "jdbc:mysql://mysqlcatshark2003-annie1141.a.aivencloud.com:21361/BOOKING_PARTY"
+        username="avnadmin" password="AVNS_3PWIbxhW6QDNfaPBc8u"
+    />
+</Context>
