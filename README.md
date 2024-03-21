@@ -3,6 +3,10 @@
 ## Overview
 The "Booking Birthday Party for Kids" project is an online platform designed to streamline the process of booking birthday parties for children. It provides a user-friendly interface for parents to browse and select various party packages and services offered by different vendors. The platform aims to simplify the planning process for busy parents, allowing them to easily customize and book everything they need for their child's birthday celebration in one place.
 
+## Technologies used in this project
+- Java Web
+- MySQL
+
 ## Task
 | STT | Function                                     | Member   |
 |-----|----------------------------------------------|------------------|
